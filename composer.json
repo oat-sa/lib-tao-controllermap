@@ -1,0 +1,39 @@
+{
+	"name": "oat-sa/lib-tao-controllermap",
+	"description": "Library to generate a map of all Tao controllers",
+	"version": "0.9.0",
+	"type": "library",
+	"authors": [
+		{
+			"name": "Open Assessment Technologies S.A.",
+			"homepage": "http://www.taotesting.com"
+		},
+		{
+			"name": "Joel Bout",
+			"email": "joel@taotesting.com",
+			"homepage": "http://www.taotesting.com",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"forum": "http://forum.taotesting.com",
+		"issues": "http://forge.taotesting.com"
+	},
+	"keywords" : ["OAT", "TAO"],
+	"homepage" : "http://www.taotesting.com",
+	"license" : [
+		"GPL-2.0"
+	],
+	"require" : {
+		"php" : ">=5.3.10",
+		"phpdocumentor/reflection-docblock":"dev-master"
+	},
+	"require-dev": {
+
+	},
+    "autoload" : {
+        "psr-4" : {
+            "oat\\controllerMap\\" : ""
+        }
+    }
+}
