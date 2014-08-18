@@ -26,14 +26,15 @@
 	],
 	"require" : {
 		"php" : ">=5.3.10",
-		"phpdocumentor/reflection-docblock":"dev-master"
+		"phpdocumentor/reflection-docblock":"dev-master",
+		"oat-sa/generis": "dev-master",
 	},
 	"require-dev": {
 
 	},
     "autoload" : {
         "psr-4" : {
-            "oat\\controllerMap\\" : ""
+            "oat\\controllerMap\\" : "src/"
         }
     }
 }
