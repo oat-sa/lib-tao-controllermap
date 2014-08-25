@@ -86,8 +86,8 @@ class ActionDescription implements iActionDescription
      */
     public function getRequiredPrivileges() {
         $privileges = array();
-        foreach ($this->getDocBlock()->getTagsByName('requiresPermission') as $tag) {
-            $privileges[$tag->getParameterName()] = $tag->getPermissionType();
+        foreach ($this->getDocBlock()->getTagsByName('requiresPrivilege') as $tag) {
+            $privileges[$tag->getParameterName()] = $tag->getPrivilegeType();
         }
         return $privileges;
     }
