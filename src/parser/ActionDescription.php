@@ -82,9 +82,9 @@ class ActionDescription implements iActionDescription
     
     /**
      * (non-PHPdoc)
-     * @see \oat\controllerMap\model\ActionDescription::getRequiredPriviledge()
+     * @see \oat\controllerMap\model\ActionDescription::getRequiredPriviledges()
      */
-    public function getRequiredPrivilege() {
+    public function getRequiredPrivileges() {
         $privileges = array();
         foreach ($this->getDocBlock()->getTagsByName('requiresPermission') as $tag) {
             $privileges[$tag->getParameterName()] = $tag->getPermissionType();

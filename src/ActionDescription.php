@@ -51,5 +51,5 @@ interface ActionDescription
      * 
      * @return array
      */
-    public function getRequiredPrivilege();
+    public function getRequiredPrivileges();
 }

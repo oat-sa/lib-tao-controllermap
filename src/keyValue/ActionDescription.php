@@ -48,9 +48,9 @@ class ActionDescription extends Element implements iActionDescription
     
     /**
      * (non-PHPdoc)
-     * @see \oat\controllerMap\model\ActionDescription::getRequiredPriviledge()
+     * @see \oat\controllerMap\model\ActionDescription::getRequiredPriviledges()
      */
-    public function getRequiredPrivilege() {
+    public function getRequiredPrivileges() {
         return $this->getData('priviledge');
     }
     
@@ -62,7 +62,7 @@ class ActionDescription extends Element implements iActionDescription
         return array(
             'name' => $action->getName(),
             'desc' => $action->getDescription(),
-            'privileges' => $action->getRequiredPrivilege()
+            'privileges' => $action->getRequiredPrivileges()
         );
     }
 }

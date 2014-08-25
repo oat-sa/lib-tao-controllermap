@@ -67,7 +67,8 @@ class Factory implements iFactory
      * @see \oat\controllerMap\Factory::getActionDescription()
      */
     public function getActionDescription($controllerClassName, $actionName) {
-        
+        $reflector = new \ReflectionMethod($controllerClassName, $actionName);
+        return new ActionDescription($reflector);
     }
     
     /**
