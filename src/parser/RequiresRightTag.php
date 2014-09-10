@@ -23,19 +23,19 @@ use phpDocumentor\Reflection\DocBlock\Tag;
 use phpDocumentor\Reflection\DocBlock\Type\Collection;
 
 /**
- * Reflection class for a @requiresPrivilege tag in a Docblock.
+ * Reflection class for a @requiresRight tag in a Docblock.
  * 
  * To be use with the phpDocumentor 
  *
  * @author  Joel Bout <joel@taotesting.com>
  */
-class RequiresPrivilegeTag extends Tag
+class RequiresRightTag extends Tag
 {
     /** @var string The raw type component. */
     protected $parameter = '';
 
     /** @var string The parsed type component. */
-    protected $privilegeType = null;
+    protected $rightId = null;
 
     /**
      * {@inheritdoc}
@@ -58,8 +58,10 @@ class RequiresPrivilegeTag extends Tag
 
         $parts = preg_split('/\s+/Su', $this->description, 3);
 
-        $this->parameter = $parts[0];
-        $this->privilegeType = $parts[1];
+        if (count($parts) >= 2) {
+            $this->parameter = $parts[0];
+            $this->rightId = $parts[1];
+        } 
 
         $this->setDescription(isset($parts[2]) ? $parts[2] : '');
 
@@ -82,9 +84,9 @@ class RequiresPrivilegeTag extends Tag
      *
      * @return string
      */
-    public function getPrivilegeType()
+    public function getRightId()
     {
-        return (string) $this->privilegeType;
+        return (string) $this->rightId;
     }
     
 

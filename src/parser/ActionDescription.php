@@ -57,7 +57,7 @@ class ActionDescription implements iActionDescription
      */
     protected function getDocBlock() {
         if (!self::$registered) {
-            Tag::registerTagHandler('requiresPrivilege', '\oat\controllerMap\parser\RequiresPrivilegeTag');
+            Tag::registerTagHandler('requiresRight', '\oat\controllerMap\parser\RequiresRightTag');
             self::$registered = true;
         }
         
@@ -82,12 +82,12 @@ class ActionDescription implements iActionDescription
     
     /**
      * (non-PHPdoc)
-     * @see \oat\controllerMap\model\ActionDescription::getRequiredPriviledges()
+     * @see \oat\controllerMap\ActionDescription::getRequiredRights()
      */
-    public function getRequiredPrivileges() {
+    public function getRequiredRights() {
         $privileges = array();
-        foreach ($this->getDocBlock()->getTagsByName('requiresPrivilege') as $tag) {
-            $privileges[$tag->getParameterName()] = $tag->getPrivilegeType();
+        foreach ($this->getDocBlock()->getTagsByName('requiresRight') as $tag) {
+            $privileges[$tag->getParameterName()] = $tag->getRightId();
         }
         return $privileges;
     }

@@ -44,12 +44,12 @@ interface ActionDescription
     public function getDescription();
     
     /**
-     * Returns an array of all privileges required to execute the action
+     * Returns an array of all rights required to execute the action
      * 
      * The array uses the name of the parmeter as key and the value is
-     * either a string identifying the priviledge or an array of strings
+     * a string identifying the right
      * 
-     * @return array
+     * @return string
      */
-    public function getRequiredPrivileges();
+    public function getRequiredRights();
 }

@@ -149,7 +149,7 @@ class Factory implements iFactory
             $extensionClass = new core_kernel_classes_Class(CLASS_ACL_EXTENSION);
             $extensionResource = $extensionClass->createInstance($extensionId,'',$specialURI);
             $extensionResource->setPropertiesValues(array(
-                PROPERTY_ACL_EXTENSION_ID			=> $extensionId
+                PROPERTY_ACL_COMPONENT_ID			=> $extensionId
             ));
         }
         
@@ -174,7 +174,7 @@ class Factory implements iFactory
         $controllerResource->setPropertiesValues(array(
             PROPERTY_ACL_MODULE_EXTENSION       => $extensionResource,
             self::PROPERTY_ACL_CONTROLLER_CLASSNAME => $controller->getClassName(),
-            PROPERTY_ACL_MODULE_ID              => $shortName
+            PROPERTY_ACL_COMPONENT_ID              => $shortName
         ));
         
         return $controllerResource;
@@ -195,7 +195,7 @@ class Factory implements iFactory
         $actionResource = $actionClass->createInstance($action->getName(),$action->getDescription(),$specialURI);
         $actionResource->setPropertiesValues(array(
             PROPERTY_ACL_ACTION_MEMBEROF	=> $controllerResource,
-            PROPERTY_ACL_ACTION_ID			=> $action->getName()
+            PROPERTY_ACL_COMPONENT_ID			=> $action->getName()
         ));
         
         return $actionResource;

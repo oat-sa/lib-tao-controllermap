@@ -49,9 +49,9 @@ class ActionDescription extends core_kernel_classes_Resource implements iActionD
     
     /**
      * (non-PHPdoc)
-     * @see \oat\controllerMap\model\ActionDescription::getRequiredPriviledges()
+     * @see \oat\controllerMap\ActionDescription::getRequiredRights()
      */
-    public function getRequiredPrivileges() {
+    public function getRequiredRights() {
         return array();
     }
 }
