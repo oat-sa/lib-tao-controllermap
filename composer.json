@@ -27,10 +27,7 @@
 	"require" : {
 		"php" : ">=5.3.10",
 		"phpdocumentor/reflection-docblock" : "2.*",
-		"oat-sa/generis" : "dev-master"
-	},
-	"require-dev": {
-		"oat-sa/generis" : "dev-develop"
+		"oat-sa/generis" : "dev-*"
 	},
     "autoload" : {
         "psr-4" : {
