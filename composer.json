@@ -30,7 +30,7 @@
 		"oat-sa/generis" : "dev-master"
 	},
 	"require-dev": {
-
+		"oat-sa/generis" : "dev-develop"
 	},
     "autoload" : {
         "psr-4" : {
