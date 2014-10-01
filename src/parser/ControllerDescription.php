@@ -32,6 +32,7 @@ use ReflectionMethod;
  */
 class ControllerDescription implements iControllerDescription
 {
+    private static $BLACK_LIST = array('forward', 'redirect', 'forwardUrl', 'setView');
     /**
      * Reflection of the controller
      * 
@@ -63,7 +64,7 @@ class ControllerDescription implements iControllerDescription
     public function getActions() {
         $actions = array();
         foreach ($this->class->getMethods(ReflectionMethod::IS_PUBLIC) as $m) {
-            if (!$m->isConstructor() && !$m->isDestructor() && is_subclass_of($m->class, 'Module') && $m->name != 'setView') {
+            if (!$m->isConstructor() && !$m->isDestructor() && is_subclass_of($m->class, 'Module') && !in_array($m->name, self::$BLACK_LIST)) {
                 $actions[] = new ActionDescription($m);
             }
         }
